@@ -10,13 +10,15 @@ import {
     Button,
     Text,
     ImageBackground,
-    TouchableHighlight,
+    TouchableOpacity,
     useColorScheme,
     View,
     TextInput,
     Image,
     ActivityIndicator
   } from 'react-native';
+
+
   
   import {
     Colors,
@@ -50,22 +52,22 @@ const Login = ({navigation}) => {
         // placeholder={'Password'}
         // placeholderTextColor="white"
       />
-          <TouchableHighlight style={styles.loginButton} onPress={this._onPressButton} underlayColor="white">
+          <TouchableOpacity style={styles.loginButton} onPress={this._onPressButton}>
           <View style={styles.button}>
             <Text style={styles.buttonText}>LOGIN</Text>
           </View>
-        </TouchableHighlight>
+        </TouchableOpacity>
         <Text style={{color: 'white',marginBottom:10,fontSize: 19}}>Or Login Using</Text>
         <View style={{display: 'flex',flexDirection: 'row'}}>
         <Image source={Gmail} style={{height: 50,width: 50,resizeMode:"contain",marginRight: 20}} />
         <Image source={Facebook} style={{height: 50,width: 40,resizeMode:"contain"}} />
         </View>
-          <TouchableHighlight style={styles.loginButton}  onPress={() =>
-        navigation.navigate('SignUp')} underlayColor="white">
+          <TouchableOpacity style={styles.loginButton}  onPress={() =>
+        navigation.navigate('SignUp')}>
           <View style={styles.button}>
             <Text style={styles.buttonText}>SignUp</Text>
           </View>
-        </TouchableHighlight>
+        </TouchableOpacity>
          </View>
          </ImageBackground>
     </View>
@@ -121,18 +123,18 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: 'white',
   },
-  input: {
-    height: 35,
-    width: '70%',
-    borderRadius: 20,
-    // justifyContent: '',
-    marginBottom: 20,
-    borderBottomWidth: 1,
-    border: 0,
-    padding: 10,
-    borderBottomColor: 'white',
-    placeholderTextColor:'white',
-  },
+  // input: {
+  //   height: 35,
+  //   width: '70%',
+  //   borderRadius: 20,
+  //   // justifyContent: '',
+  //   marginBottom: 20,
+  //   borderBottomWidth: 1,
+  //   border: 0,
+  //   padding: 10,
+  //   borderBottomColor: 'white',
+  //   placeholderTextColor:'white',
+  // },
 
 });
 

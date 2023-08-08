@@ -1,7 +1,8 @@
 import React from 'react'
-import { View } from 'react-native'
+import { Text, View } from 'react-native'
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import { BrowserRouter } from 'react-router-dom';
 import Login from './src/Screens/Login'
 import SignUp from './src/Screens/SignUp'
 import Launch from './src/Screens/Launch';
@@ -9,21 +10,34 @@ import Launch from './src/Screens/Launch';
 const Stack = createNativeStackNavigator();
 const App = () => {
   return (
-    <NavigationContainer>
-    <Stack.Navigator screenOptions={{headerShown: false}}>
-      <Stack.Screen
+  //   <NavigationContainer>
+  //   <Stack.Navigator screenOptions={{headerShown: false}}>
+  //     <Stack.Screen
+  //       name="Home"
+  //       component={Launch}
+  //       options={{title: 'Login'}}
+  //     />
+  //     <Stack.Screen name="Login" component={Login} />
+  //     <Stack.Screen name="SignUp" component={SignUp} />
+  //   </Stack.Navigator>
+  // </NavigationContainer>
+    // <View>
+    //    <Login />
+    //    <SignUp />
+    // </View>
+    <BrowserRouter>
+      <NavigationContainer>
+  <Stack.Navigator screenOptions={{headerShown: false}}>
+  <Stack.Screen
         name="Home"
-        component={Login}
-        options={{title: 'Login'}}
+        component={Launch}
+        // options={{title: 'Login'}}
       />
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="SignUp" component={SignUp} />
     </Stack.Navigator>
   </NavigationContainer>
-    // <View>
-    //    <Login />
-    //    <SignUp />
-    // </View>
+  </BrowserRouter>
   )
 }
 
